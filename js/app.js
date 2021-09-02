@@ -11,22 +11,27 @@ const searchBook = () => {
 
 }
 
-const displayBook = (books) => {
+const displayBook = (docs) => {
+  console.log(docs)
     const booksContainer = document.getElementById('books-container')
     booksContainer.textContent = '';
-    books.forEach(book => {
-        console.log(book)
+    const resutlFound = document.getElementById('found-result')
+    resutlFound.textContent = '';
+    docs.forEach(doc => {
+        console.log(doc)
         const div = document.createElement('div');
         div.classList.add('col');
-        div.innerHTML = ` <div class="card">
-        <img src=" https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" class="card-img-top" alt="...">
+        div.innerHTML = `<div class="card" style = "height: 600px; width: 450px margin: 5px">
+        <img src=" https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">${book.title}</h5>
-          <p class="card-text"> Author: ${book.author_name[0]}</p>
-          <p class="card-text"> First publish: ${book.first_publish_year}</p>
+          <h5 class="card-title">${doc.title}</h5>
+          <p class="card-text"><span class = "fw-bold">Author:</span> ${doc.author_name[0]}</p>
+          <p class="card-text"><span class = "fw-bold">Publish Year:</span> ${doc.first_publish_year}</p>
+          <p class="card-text"><span class = "fw-bold"> Publisher:</span> ${doc.publisher}</p>
         </div>
       </div>`
       booksContainer.appendChild(div)
+      resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} result found</p>`
 
 
 
