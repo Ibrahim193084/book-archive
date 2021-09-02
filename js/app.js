@@ -1,4 +1,4 @@
-//search book 
+//search book
 const searchBook = () => {
     const inputField = document.getElementById('input-field')
     const searchText = inputField.value;
@@ -8,15 +8,30 @@ const searchBook = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayBook(data.docs))
-
 }
 
+//display book 
 const displayBook = (docs) => {
-  console.log(docs)
+  // console.log(docs)
+
+  //error handling
+  if(docs.length === 0){
+    const errorMessage = document.getElementById('error-message');
+      errorMessage.style.display ='block';
+      errorMessage.innerHTML=`
+          <h3 class='text-danger'> Please give a book name !!! </h3>
+      `
+  }
+  else{
+    // books container refresh
     const booksContainer = document.getElementById('books-container')
     booksContainer.textContent = '';
+    // found result refresh
     const resutlFound = document.getElementById('found-result')
     resutlFound.textContent = '';
+    //error message refresh
+    const errorMessage = document.getElementById('error-message')
+    errorMessage.textContent = '';
     docs.forEach(doc => {
         console.log(doc)
         const div = document.createElement('div');
@@ -33,4 +48,5 @@ const displayBook = (docs) => {
       booksContainer.appendChild(div)
       resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} result found</p>`
     })
+  }
 }
