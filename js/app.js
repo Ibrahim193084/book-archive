@@ -1,6 +1,18 @@
+//toogle spinner
+const toggleSpinner = displayStyle => {
+  document.getElementById('spinner').style.display = displayStyle;
+}
 //search book
 const searchBook = () => {
     const inputField = document.getElementById('input-field')
+    //display spinner 
+    toggleSpinner('block')
+        // found result refresh
+        const resutlFound = document.getElementById('found-result')
+        resutlFound.textContent = '';
+        //error message refresh
+        const errorMessage = document.getElementById('error-message')
+        errorMessage.textContent = '';
     const searchText = inputField.value;
     //clear inputField
     inputField.value = '';
@@ -22,6 +34,8 @@ const displayBook = (docs) => {
        // found result refresh
     const resutlFound = document.getElementById('found-result')
     resutlFound.textContent = '';
+
+    toggleSpinner('none')
   }
   else{
     // books container refresh
@@ -48,6 +62,10 @@ const displayBook = (docs) => {
       </div>`
       booksContainer.appendChild(div)
       resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} results found</p>`
+      toggleSpinner('none')
+      
     })
+  
   }
+  
 }
