@@ -7,15 +7,14 @@
     <title>The library campaign</title>
     <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-   
-    
-
 </head>
-
+<!-- body internel style -->
 <body style="background-image: url(images/img1.jpg);
 background-repeat: no-repeat;
 background-size: cover;">
-
+<!-- header start -->
+<header>
+  <!-- heading -->
 <h2 class="text-center text-white fw-bold mt-3">Search Your Favourite Book</h2>
 <!-- search input field -->
 
@@ -25,8 +24,10 @@ background-size: cover;">
 </div>
 
 <!-- spinner -->
-<div id="spinner" style="text-align: center; margin-left: 550px; display: none;" class="spinner-border text-white text-center my-auto" role="status">
-  <span class="visually-hidden text-center">Loading...</span>
+<div class="spinner-contsiner d-flex align-items-center justify-content-center">
+  <div id="spinner" style="text-align: center; display: none;" class="spinner-border text-white" role="status">
+    <span class="visually-hidden text-center">Loading...</span>
+  </div>
 </div>
 
 
@@ -38,13 +39,18 @@ background-size: cover;">
  <div id="error-message" class=" w-50 text-center p-3 mx-auto">
 </div>
 
-
-<!-- display result -->
+</header>
+<!-- header end -->
+<!-- main start -->
+<main>
+  <!-- display result -->
 
 <section class="container">
   <div id="books-container" class="row row-cols-1 row-cols-md-5  g-3 mt-5">
 </div>
 </section>
+</main>
+<!-- main end -->
 
     <!-- bootstrap js bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

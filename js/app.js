@@ -5,7 +5,7 @@ const toggleSpinner = displayStyle => {
 //search book
 const searchBook = () => {
     const inputField = document.getElementById('input-field')
-    //display spinner 
+    //display spinner call
     toggleSpinner('block')
         // found result refresh
         const resutlFound = document.getElementById('found-result')
@@ -34,7 +34,7 @@ const displayBook = (docs) => {
        // found result refresh
     const resutlFound = document.getElementById('found-result')
     resutlFound.textContent = '';
-
+    //toggle spinner call
     toggleSpinner('none')
   }
   else{
@@ -48,7 +48,8 @@ const displayBook = (docs) => {
     const errorMessage = document.getElementById('error-message')
     errorMessage.textContent = '';
     docs.forEach(doc => {
-        console.log(doc)
+        // console.log(doc)
+        //results show  on display
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `<div class="card" style = "height: 600px; width: 450px margin: 5px; padding:5px">
@@ -61,11 +62,10 @@ const displayBook = (docs) => {
         </div>
       </div>`
       booksContainer.appendChild(div)
+      // how many results found show display
       resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} results found</p>`
+      //toggle spinner call
       toggleSpinner('none')
-      
     })
-  
   }
-  
 }
