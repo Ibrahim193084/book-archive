@@ -40,14 +40,14 @@ const displayBook = (docs) => {
         div.innerHTML = `<div class="card" style = "height: 600px; width: 450px margin: 5px; padding:5px">
         <img src=" https://covers.openlibrary.org/b/id/${doc?.cover_i}-L.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">${doc.title}</h5>
+          <h5 class="card-title">${doc?.title}</h5>
           <p class="card-text"><span class = "fw-bold">Author:</span> ${doc?.author_name[0]}</p>
           <p class="card-text"><span class = "fw-bold">Publish Year:</span> ${doc?.first_publish_year}</p>
           <p class="card-text"><span class = "fw-bold"> Publisher:</span> ${doc?.publisher}</p>
         </div>
       </div>`
       booksContainer.appendChild(div)
-      resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} result found</p>`
+      resutlFound.innerHTML = `<p class ="text-white fw-bold text-center">${docs.length} results found</p>`
     })
   }
 }
