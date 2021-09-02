@@ -17,7 +17,6 @@ const displayBook = (docs) => {
   //error handling
   if(docs.length === 0){
     const errorMessage = document.getElementById('error-message');
-      errorMessage.style.display ='block';
       errorMessage.innerHTML=`
           <h3 class='text-danger'> Please give a book name !!! </h3>
       `
