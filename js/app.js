@@ -31,6 +31,10 @@ const displayBook = (docs) => {
       errorMessage.innerHTML=`
           <h3 class='text-danger'> Please give a book name !!! </h3>
       `
+      toggleSpinner('none')
+      const booksContainer = document.getElementById('books-container')
+      booksContainer.textContent = ''
+     
        // found result refresh
     const resutlFound = document.getElementById('found-result')
     resutlFound.textContent = '';
@@ -56,7 +60,7 @@ const displayBook = (docs) => {
         <img src=" https://covers.openlibrary.org/b/id/${doc?.cover_i}-L.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">${doc?.title}</h5>
-          <p class="card-text"><span class = "fw-bold">Author:</span> ${doc?.author_name[0]}</p>
+          <p class="card-text"><span class = "fw-bold">Author:</span> ${doc?.author_name[1]}</p>
           <p class="card-text"><span class = "fw-bold">Publish Year:</span> ${doc?.first_publish_year}</p>
           <p class="card-text"><span class = "fw-bold"> Publisher:</span> ${doc?.publisher}</p>
         </div>
